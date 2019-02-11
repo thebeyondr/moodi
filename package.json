@@ -1,0 +1,29 @@
+{
+  "name": "moodi",
+  "version": "1.0.0",
+  "description": "A place to create poems based on image prompts",
+  "main": "server.js",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.10"
+  },
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zextis/moodi.git"
+  },
+  "author": "Jeovannie Patterson, Delroy Bicknell",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/zextis/moodi/issues"
+  },
+  "homepage": "https://github.com/zextis/moodi#readme"
+}
