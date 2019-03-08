@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose
 
+// TODO: Add User to Schema
 const postSchema = new Schema({
   photoId: { type: String, required: true },
   likes: [{ type: Schema.Types.ObjectId, ref: 'User' }],

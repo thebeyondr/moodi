@@ -18,7 +18,30 @@ module.exports = {
   getCurrentPost: (req, res, next) => {
     Post.findOne({ isCurrent: true })
       .then(post => {
-        return photoService.getSpecificPhoto(req, res, next, post.photoId)
+        if (!post) {
+          return
+        }
+        photoService
+          .getSpecificPhoto(req, res, next, post.photoId)
+          .then(image => {
+            return res.json({
+              id: post._id,
+              likes: post.likes,
+              comments: post.comments,
+              createdAt: post.createdAt,
+              image: {
+                id: image.id,
+                description: image.description,
+                link: image.links.html,
+                url: image.urls.regular,
+                user: {
+                  ...image.user,
+                  links: image.user.links.html,
+                  profile_image: image.user.profile_image.medium
+                }
+              }
+            })
+          })
       })
       .catch(err => {
         console.log(err)
