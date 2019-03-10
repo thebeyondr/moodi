@@ -8,6 +8,7 @@ const postSchema = new Schema({
   comments: [
     { user: { type: Schema.Types.ObjectId, ref: 'User' }, comment: { type: String } }
   ],
+  shortId: { type: String },
   isCurrent: { type: Boolean, default: true },
   createdAt: { type: Date, default: Date.now },
   archivedAt: { type: Date }
